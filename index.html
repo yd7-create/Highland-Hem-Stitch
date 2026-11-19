@@ -1,0 +1,759 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Highlands Hem and Stitch | Affordable Tailoring for Students</title>
+<meta name="description" content="Affordable, customizable clothing alterations for high school students. Hemming, waist adjustments, shirt and sleeve alterations, repairs and custom fits.">
+<meta property="og:title" content="Highlands Hem and Stitch">
+<meta property="og:description" content="Everyone deserves clothes that fit, regardless of their budget.">
+<meta name="theme-color" content="#fbf8f2">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='19' fill='%231c2b4a'/%3E%3Cpath d='M12 29L27 11' stroke='%23fbf8f2' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout idea: a tailor's fitting card. Stitched (dashed) seams divide sections; garment flats with fit callouts carry the imagery. */
+:root{
+  --paper:#fbf8f2; --cream:#f1e8d8; --beige:#dccbae; --line:#c9b694;
+  --ink:#1c2b4a; --muted:#4f5a72; --white:#ffffff;
+  --display:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --body:"Manrope", "Helvetica Neue", Arial, sans-serif;
+}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);-webkit-font-smoothing:antialiased}
+a{color:var(--ink)} a:hover{color:var(--muted)}
+*{box-sizing:border-box}
+.site{width:100%;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;scroll-behavior:smooth}
+.wrap{width:100%;max-width:1240px;margin:0 auto;padding:0 32px}
+h1,h2,h3{font-family:var(--display);font-weight:400;letter-spacing:-0.02em;text-wrap:balance;margin:0;line-height:1.05}
+p{margin:0}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:4px}
+
+/* Nav */
+.nav{position:sticky;top:0;z-index:20;background:rgba(251,248,242,0.92);backdrop-filter:blur(10px);border-bottom:1px dashed var(--line)}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--ink)}
+.brand:hover{color:var(--ink)}
+.brand-name{font-family:var(--display);font-size:22px;line-height:1;letter-spacing:-0.01em}
+.brand-sub{display:block;font-family:var(--body);font-size:10.5px;letter-spacing:0.22em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+.links{display:flex;align-items:center;gap:30px}
+.links a{font-size:14px;font-weight:500;text-decoration:none;color:var(--ink);position:relative;padding:6px 0}
+.links a.btn-dark,.links a.btn-dark:hover{color:var(--paper);padding:0 20px}
+.links a.plain::after{content:"";position:absolute;left:0;right:0;bottom:0;border-bottom:1.5px dashed var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.links a.plain:hover::after{transform:scaleX(1)}
+.menu-btn{display:none;width:44px;height:44px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);align-items:center;justify-content:center;cursor:pointer}
+.mobile-panel[hidden]{display:none}
+.mobile-panel{display:flex;flex-direction:column;gap:4px;padding:8px 0 20px}
+.mobile-panel a{font-family:var(--display);font-size:26px;text-decoration:none;padding:8px 0;border-bottom:1px dashed var(--line)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 26px;border-radius:999px;font-family:var(--body);font-size:15px;font-weight:600;text-decoration:none;cursor:pointer;transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;border:1.5px solid var(--ink)}
+.btn-dark{background:var(--ink);color:var(--paper)}
+.btn-dark:hover{color:var(--paper);background:#2d4170;transform:translateY(-2px);box-shadow:0 10px 24px -12px rgba(28,43,74,.6)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost:hover{color:var(--ink);background:var(--cream);transform:translateY(-2px)}
+.btn-sm{min-height:44px;padding:0 20px;font-size:14px}
+.btn .arr{transition:transform .25s ease}
+.btn:hover .arr{transform:translateX(4px)}
+
+/* Hero */
+.hero{padding:72px 0 88px}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr);gap:64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--muted)}
+.eyebrow::before{content:"";width:28px;border-top:1.5px dashed var(--muted)}
+.hero h1{font-size:clamp(52px,7.4vw,104px);margin:22px 0 26px;font-weight:350}
+.hero h1 em{font-style:italic;font-weight:300}
+.lede{font-size:19px;color:var(--muted);max-width:33em}
+.cta-row{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-notes{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:40px;font-size:14px;color:var(--muted)}
+.hero-notes span{display:inline-flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;border-radius:999px;background:var(--ink)}
+
+.fit-card{position:relative;background:var(--cream);border-radius:28px;padding:30px 30px 26px;border:1px solid var(--beige)}
+.fit-card::before{content:"";position:absolute;inset:10px;border:1.5px dashed var(--line);border-radius:20px;pointer-events:none}
+.fit-head{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.fit-pair{position:relative;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:14px}
+.fit-col{display:flex;flex-direction:column;align-items:center;gap:6px}
+.fit-col svg{width:100%;max-width:230px;height:auto}
+.fit-label{font-family:var(--display);font-size:24px;font-style:italic}
+.fit-cap{font-size:13px;color:var(--muted);text-align:center}
+.fit-foot{position:relative;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+.tag{position:absolute;top:-18px;right:34px;background:var(--ink);color:var(--paper);font-size:12px;font-weight:600;letter-spacing:.08em;padding:9px 14px 9px 22px;border-radius:6px 999px 999px 6px;transform:rotate(4deg)}
+.tag::before{content:"";position:absolute;left:8px;top:50%;width:6px;height:6px;margin-top:-3px;border-radius:999px;background:var(--paper)}
+
+/* Ribbon */
+.ribbon{border-top:1px dashed var(--line);border-bottom:1px dashed var(--line);background:var(--ink);color:var(--paper);overflow:hidden}
+.ribbon-track{display:flex;gap:48px;width:max-content;padding:20px 0;animation:slide 38s linear infinite}
+.ribbon-track span{font-family:var(--display);font-size:24px;font-style:italic;white-space:nowrap;display:inline-flex;align-items:center;gap:48px}
+.ribbon-track span::after{content:"";width:22px;border-top:1.5px dashed rgba(251,248,242,.6)}
+
+/* Sections */
+.section{padding:112px 0}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:end;margin-bottom:56px}
+.sec-head h2{font-size:clamp(40px,5vw,64px);margin-top:16px}
+.sec-head p{color:var(--muted);max-width:30em;justify-self:end}
+.alt{background:var(--cream);border-top:1px dashed var(--line);border-bottom:1px dashed var(--line)}
+
+/* Services */
+.svc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.svc{position:relative;display:flex;flex-direction:column;gap:14px;background:var(--white);border:1px solid var(--beige);border-radius:22px;padding:30px;transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease}
+.svc:hover{transform:translateY(-6px);box-shadow:0 24px 40px -28px rgba(28,43,74,.45);border-color:var(--ink)}
+.svc-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.icon{width:52px;height:52px;border-radius:14px;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:background .35s ease, color .35s ease}
+.svc:hover .icon{background:var(--ink);color:var(--paper)}
+.price{font-size:13px;font-weight:600;padding:6px 12px;border:1.5px dashed var(--line);border-radius:999px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.svc h3{font-size:28px;margin-top:6px}
+.svc p{color:var(--muted);font-size:15.5px}
+.svc ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
+.svc li{display:flex;gap:10px;align-items:baseline}
+.svc li::before{content:"";flex:0 0 12px;border-top:1.5px dashed var(--ink);transform:translateY(-4px)}
+.svc-cta{margin-top:auto;padding-top:10px;display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;text-decoration:none;min-height:44px}
+.svc-cta .arr{transition:transform .25s ease}
+.svc-cta:hover .arr{transform:translateX(4px)}
+.note{margin-top:28px;font-size:14px;color:var(--muted);display:flex;gap:10px;align-items:baseline}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1.5px dashed var(--ink)}
+.step{padding:34px 34px 10px 0;display:flex;flex-direction:column;gap:14px;position:relative}
+.step + .step{padding-left:34px;border-left:1px dashed var(--line)}
+.step-num{font-family:var(--display);font-size:72px;line-height:1;font-style:italic;font-weight:300;font-variant-numeric:tabular-nums}
+.step h3{font-size:30px}
+.step p{color:var(--muted);max-width:22em}
+
+/* Why */
+.why-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.why{display:grid;grid-template-columns:auto minmax(0,1fr);gap:22px;padding:34px;border-radius:22px;background:var(--paper);border:1px solid var(--beige);transition:border-color .3s ease}
+.why:hover{border-color:var(--ink)}
+.why-k{font-family:var(--display);font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);writing-mode:vertical-rl;transform:rotate(180deg);border-left:1.5px dashed var(--line);padding-left:14px}
+.why h3{font-size:32px;margin-bottom:12px}
+.why p{color:var(--muted)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr);gap:72px;align-items:start}
+.quote{font-family:var(--display);font-size:clamp(34px,4vw,52px);line-height:1.12;font-weight:300;letter-spacing:-0.015em;text-wrap:balance}
+.quote em{font-style:italic}
+.about-body{display:flex;flex-direction:column;gap:20px;color:var(--muted);font-size:18px}
+.about-body strong{color:var(--ink);font-weight:600}
+.values{display:flex;flex-wrap:wrap;gap:10px;margin-top:8px}
+.chip{font-size:13.5px;font-weight:600;color:var(--ink);padding:8px 16px;border-radius:999px;background:var(--cream);border:1px solid var(--beige)}
+
+/* Request */
+.req-grid{display:grid;grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr);gap:56px;align-items:start}
+.contact-list{display:flex;flex-direction:column;margin-top:34px;border-top:1px dashed var(--line)}
+.contact-item{display:flex;flex-direction:column;gap:4px;padding:18px 0;border-bottom:1px dashed var(--line)}
+.contact-k{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.contact-v{font-family:var(--display);font-size:22px}
+.ph{background:var(--cream);border:1px dashed var(--line);border-radius:6px;padding:0 6px}
+.form-card{background:var(--white);border:1px solid var(--beige);border-radius:28px;padding:40px;box-shadow:0 30px 60px -48px rgba(28,43,74,.5)}
+.form{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.field{display:flex;flex-direction:column;gap:8px}
+.field.full{grid-column:1 / -1}
+.field label{font-size:13.5px;font-weight:600}
+.field label span{color:var(--muted);font-weight:500}
+.input{width:100%;min-height:52px;padding:13px 16px;border-radius:14px;border:1.5px solid var(--beige);background:var(--paper);font-family:var(--body);font-size:16px;color:var(--ink);transition:border-color .2s ease, background .2s ease;appearance:none;-webkit-appearance:none}
+.input:hover{border-color:var(--line)}
+.input:focus{outline:none;border-color:var(--ink);background:var(--white)}
+select.input{appearance:auto;-webkit-appearance:menulist;padding-right:16px;cursor:pointer}
+textarea.input{min-height:130px;resize:vertical;line-height:1.5}
+.err{font-size:13px;color:#9a2a17;font-weight:600}
+.input.bad{border-color:#9a2a17}
+.form-foot{grid-column:1 / -1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;padding-top:8px}
+.form-foot p{font-size:13.5px;color:var(--muted);max-width:26em}
+.chips-row{display:flex;flex-wrap:wrap;gap:8px}
+.pick{min-height:40px;padding:0 14px;border-radius:999px;border:1.5px solid var(--beige);background:var(--paper);font-family:var(--body);font-size:13.5px;font-weight:600;color:var(--ink);cursor:pointer;transition:all .2s ease}
+.pick:hover{border-color:var(--ink)}
+.pick.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.done{display:flex;flex-direction:column;gap:18px;animation:rise .6s ease both}
+.done h3{font-size:40px}
+.summary{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px 24px;padding:22px;border-radius:18px;background:var(--cream);border:1.5px dashed var(--line);font-size:15px}
+.summary dt{color:var(--muted);font-weight:600}
+.summary dd{margin:0}
+
+/* Footer */
+.footer{background:var(--ink);color:var(--paper);padding:80px 0 36px}
+.footer a{color:var(--paper);text-decoration:none}
+.footer a:hover{color:var(--beige)}
+.foot-msg{font-family:var(--display);font-size:clamp(36px,5vw,68px);font-weight:300;line-height:1.08;letter-spacing:-0.02em;max-width:15em;text-wrap:balance}
+.foot-msg em{font-style:italic}
+.foot-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:24px;margin-top:64px;padding-top:28px;border-top:1px dashed rgba(251,248,242,.3);font-size:14px;color:rgba(251,248,242,.75)}
+.foot-links{display:flex;flex-wrap:wrap;gap:24px}
+
+/* Motion */
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes sew{from{stroke-dashoffset:120}to{stroke-dashoffset:0}}
+.r1{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.r2{animation:rise .8s .12s cubic-bezier(.2,.7,.2,1) both}
+.r3{animation:rise .8s .24s cubic-bezier(.2,.7,.2,1) both}
+.r4{animation:rise .9s .36s cubic-bezier(.2,.7,.2,1) both}
+.sew{stroke-dasharray:4 4;animation:sew 3s linear infinite}
+@media (prefers-reduced-motion: reduce){
+  .r1,.r2,.r3,.r4,.done{animation:none}
+  .ribbon-track,.sew{animation:none}
+  .svc,.btn,.icon{transition:none}
+  .site{scroll-behavior:auto}
+}
+
+/* Responsive */
+@media (max-width: 1020px){
+  .hero-grid,.about-grid,.req-grid{grid-template-columns:minmax(0,1fr);gap:48px}
+  .svc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .sec-head{grid-template-columns:minmax(0,1fr);gap:18px}
+  .sec-head p{justify-self:start}
+  .links{display:none}
+  .menu-btn{display:inline-flex}
+}
+@media (max-width: 720px){
+  .wrap{padding:0 20px}
+  .hero{padding:44px 0 64px}
+  .section{padding:80px 0}
+  .svc-grid,.why-grid{grid-template-columns:minmax(0,1fr)}
+  .steps{grid-template-columns:minmax(0,1fr)}
+  .step,.step + .step{padding:28px 0 24px;border-left:none}
+  .step + .step{border-top:1px dashed var(--line)}
+  .form{grid-template-columns:minmax(0,1fr)}
+  .form-card{padding:26px 20px}
+  .why{padding:26px}
+  .fit-card{padding:24px 18px 20px}
+  .tag{right:18px}
+}
+@media (min-width: 1021px){ .mobile-only{display:none} }
+
+[hidden]{display:none !important}
+.btn[disabled]{opacity:.6;cursor:wait}
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:84px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div class="site" id="top">
+
+  <!-- NAVIGATION -->
+  <header class="nav">
+    <div class="wrap">
+      <div class="nav-row">
+        <a class="brand" href="#top" aria-label="Highlands Hem and Stitch, back to top">
+          <svg width="38" height="38" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="20" cy="20" r="18.5"></circle>
+            <path d="M12 29 L27 11" stroke-linecap="round"></path>
+            <ellipse cx="27.6" cy="10.3" rx="1.4" ry="2.3" transform="rotate(40 27.6 10.3)"></ellipse>
+            <path d="M12 29 C 8 25, 14 20, 19 23 S 30 26, 30 19" stroke-dasharray="2.5 2.5" stroke-linecap="round"></path>
+          </svg>
+          <span>
+            <span class="brand-name">Highlands</span>
+            <span class="brand-sub">Hem &amp; Stitch</span>
+          </span>
+        </a>
+        <nav class="links" aria-label="Main">
+          <a class="plain" href="#services">Services</a>
+          <a class="plain" href="#how">How it works</a>
+          <a class="plain" href="#why">Why us</a>
+          <a class="plain" href="#about">About</a>
+          <a class="btn btn-dark btn-sm" href="#request">Request an Alteration</a>
+        </nav>
+        <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" id="menu-btn">
+          <svg class="i-close" hidden width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"></path></svg>
+          <svg class="i-open" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 8h16M4 16h16"></path></svg>
+        </button>
+      </div>
+      <nav class="mobile-panel mobile-only" id="mobile-nav" aria-label="Mobile" hidden>
+          <a href="#services">Services</a>
+          <a href="#how">How it works</a>
+          <a href="#why">Why us</a>
+          <a href="#about">About</a>
+          <a href="#request">Request an Alteration</a>
+        </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow r1">Student tailoring</span>
+        <h1 class="r2">Good fit isn&#39;t a luxury. It&#39;s for <em>everyone.</em></h1>
+        <p class="lede r3">Highlands Hem and Stitch does affordable alterations for high school students at Issaquah. Hem your pants, take in a waist, fix a seam, or change how something fits. Pricing is upfront and built to fit a student budget.</p>
+        <div class="cta-row r4">
+          <a class="btn btn-dark" href="#services">Explore Our Services <span class="arr" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost" href="#request">Request an Alteration</a>
+        </div>
+        <div class="hero-notes r4">
+          <span><i class="dot"></i>Student-friendly prices</span>
+          <span><i class="dot"></i>Fit it your way</span>
+          <span><i class="dot"></i>Request in two minutes</span>
+        </div>
+      </div>
+
+      <figure class="fit-card r3" style="margin: 0" aria-label="Illustration: a pair of pants before and after tailoring">
+        <span class="tag">FITTING CARD</span>
+        <div class="fit-head"><span>Item: pants</span><span>Example fit</span></div>
+        <div class="fit-pair">
+          <div class="fit-col">
+            <svg viewBox="0 0 200 310" fill="none" stroke="#1c2b4a" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+              <rect x="34" y="18" width="132" height="20" rx="2" fill="#fbf8f2"></rect>
+              <path d="M34 38 L166 38 L174 128 L180 296 L118 296 L104 118 L96 118 L82 296 L20 296 L26 128 Z" fill="#fbf8f2"></path>
+              <path d="M100 38 L100 104"></path>
+              <path d="M46 40 C 54 60, 70 64, 80 62"></path>
+              <path d="M154 40 C 146 60, 130 64, 120 62"></path>
+              <path d="M24 262 C 36 270, 56 258, 80 268" stroke="#4f5a72"></path>
+              <path d="M22 280 C 38 288, 58 276, 81 286" stroke="#4f5a72"></path>
+              <path d="M120 268 C 142 258, 162 270, 177 262" stroke="#4f5a72"></path>
+              <path d="M119 286 C 142 276, 160 288, 179 280" stroke="#4f5a72"></path>
+              <path d="M30 70 C 24 76, 24 84, 30 90" stroke="#4f5a72"></path>
+              <path d="M170 70 C 176 76, 176 84, 170 90" stroke="#4f5a72"></path>
+            </svg>
+            <span class="fit-label">Before</span>
+            <span class="fit-cap">Too long, loose at the waist</span>
+          </div>
+          <div class="fit-col">
+            <svg viewBox="0 0 200 310" fill="none" stroke="#1c2b4a" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true">
+              <path d="M18 296 L182 296" stroke="#4f5a72" stroke-dasharray="3 4"></path>
+              <rect x="48" y="18" width="104" height="20" rx="2" fill="#ffffff"></rect>
+              <path d="M48 38 L152 38 L157 124 L151 262 L117 262 L103 116 L97 116 L83 262 L49 262 L43 124 Z" fill="#ffffff"></path>
+              <path d="M100 38 L100 102"></path>
+              <path d="M58 40 C 64 58, 76 62, 84 60"></path>
+              <path d="M142 40 C 136 58, 124 62, 116 60"></path>
+              <path class="sew" d="M51 255 L81 255"></path>
+              <path class="sew" d="M119 255 L149 255"></path>
+              <path class="sew" d="M50 32 L150 32"></path>
+              <path d="M66 292 L66 268 M61 273 L66 267 L71 273" stroke="#1c2b4a"></path>
+              <path d="M134 292 L134 268 M129 273 L134 267 L139 273" stroke="#1c2b4a"></path>
+              <path d="M30 28 L44 28 M39 23 L44 28 L39 33" stroke="#1c2b4a"></path>
+              <path d="M170 28 L156 28 M161 23 L156 28 L161 33" stroke="#1c2b4a"></path>
+            </svg>
+            <span class="fit-label">After</span>
+            <span class="fit-cap">Hemmed and taken in to fit</span>
+          </div>
+        </div>
+        <div class="fit-foot"><span>Alterations: hem, waist</span><span>Fit: yours to choose</span></div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon" aria-hidden="true">
+    <div class="ribbon-track">
+      <span>Pants hemming</span><span>Waist adjustments</span><span>Shirt alterations</span><span>Sleeve adjustments</span><span>Clothing repairs</span><span>Custom fit</span>
+      <span>Pants hemming</span><span>Waist adjustments</span><span>Shirt alterations</span><span>Sleeve adjustments</span><span>Clothing repairs</span><span>Custom fit</span>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Our services</span>
+          <h2>Alterations for the clothes you already own.</h2>
+        </div>
+        <p>Pick a service to start a request. Each price is a starting point, so you know roughly what you&#39;ll pay before you hand anything over.</p>
+      </div>
+
+      <div class="svc-grid">
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M7 2.5h10l1.5 19h-5L12 9l-1.5 12.5h-5z"></path><path d="M4 18.5h16" stroke-dasharray="2 2"></path></svg></div>
+            <span class="price">From $[ ]</span>
+          </div>
+          <h3>Pants hemming</h3>
+          <p>Shorten jeans, slacks or dress pants so they sit right on your shoes instead of bunching up.</p>
+          <ul><li>Regular or cuffed hems</li><li>Keep the original jeans hem</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="Pants hemming" data-item="Pants / jeans">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14v4H5z"></path><path d="M12 7v4"></path><path d="M2 17h6M5 14.5 2 17l3 2.5"></path><path d="M22 17h-6M19 14.5 22 17l-3 2.5"></path></svg></div>
+            <span class="price">From $[ ]</span>
+          </div>
+          <h3>Waist adjustments</h3>
+          <p>Take in or let out the waist of pants, skirts and shorts so you can stop relying on a belt.</p>
+          <ul><li>Take in or let out</li><li>Back seam or side seams</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="Waist adjustment" data-item="Pants / jeans">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3 3 6l2 4.5 2.5-1V21h9V9.5l2.5 1L21 6l-5.5-3c-.5 1.6-1.8 2.5-3.5 2.5S9 4.6 8.5 3z"></path><path d="M12 9v12" stroke-dasharray="2 2"></path></svg></div>
+            <span class="price">From $[ ]</span>
+          </div>
+          <h3>Shirt alterations</h3>
+          <p>Slim a boxy shirt, shorten the length, or adjust the sides for a cleaner, more fitted shape.</p>
+          <ul><li>Take in the sides</li><li>Shorten the body</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="Shirt alteration" data-item="Shirt / top">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h7l9 9-4 4-9-9V4z"></path><path d="M13.5 15.5 9 20" stroke-dasharray="2 2"></path><path d="M16 17l3 3"></path></svg></div>
+            <span class="price">From $[ ]</span>
+          </div>
+          <h3>Sleeve adjustments</h3>
+          <p>Shorten sleeves on shirts, hoodies and jackets so they end where you want them to.</p>
+          <ul><li>Shirts and blazers</li><li>Hoodies and jackets</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="Sleeve adjustment" data-item="">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 20 18.5 5.5"></path><ellipse cx="19.5" cy="4.5" rx="1.2" ry="2" transform="rotate(45 19.5 4.5)"></ellipse><path d="M4 20c-2-3 1-6 4-4s6 1 6-2" stroke-dasharray="2 2"></path></svg></div>
+            <span class="price">From $[ ]</span>
+          </div>
+          <h3>General repairs</h3>
+          <p>Ripped seams, loose buttons, small tears and broken hems, fixed so your favorite pieces last longer.</p>
+          <ul><li>Seams and small tears</li><li>Buttons and hems</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="General repair" data-item="">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+
+        <article class="svc">
+          <div class="svc-top">
+            <div class="icon"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="10" r="6"></circle><circle cx="9" cy="10" r="1.6"></circle><path d="M15 10v10h6"></path><path d="M18 20v-2M15.5 20v-1.5" stroke-width="1.2"></path></svg></div>
+            <span class="price">Quote first</span>
+          </div>
+          <h3>Custom fit</h3>
+          <p>Want something tapered, cropped or reshaped? Tell us the look you&#39;re going for and we&#39;ll plan it with you.</p>
+          <ul><li>Tapering and cropping</li><li>Your own ideas</li></ul>
+          <a class="svc-cta" href="#request" data-alteration="Custom fit" data-item="">Request this <span class="arr" aria-hidden="true">→</span></a>
+        </article>
+      </div>
+      <p class="note"><span aria-hidden="true">✳</span>Prices shown as $[ ] are placeholders until final pricing is set. We&#39;ll always confirm the price with you before starting.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section alt" id="how">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">How it works</span>
+          <h2>Three steps. No complicated process.</h2>
+        </div>
+        <p>You don&#39;t need to know tailoring terms. Tell us what feels off and we&#39;ll figure out the rest together.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <h3>Choose your item</h3>
+          <p>Pick the piece of clothing and the alteration you need, like hemming, a waist fix or a repair.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <h3>Make it yours</h3>
+          <p>Tell us how you want it to fit: slimmer, shorter, cropped, cuffed. Your style, your call.</p>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <h3>Wear it better</h3>
+          <p>Get your clothes back fitting the way they should, and actually want to wear them.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY US -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Why choose us</span>
+          <h2>Tailoring that works for students.</h2>
+        </div>
+        <p>Most alteration shops aren&#39;t set up with teenagers in mind. We are, from the prices to how easy it is to ask.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why">
+          <span class="why-k">Affordable</span>
+          <div><h3>Student-friendly pricing</h3><p>Budget-first prices with no surprises. You see a starting price up front and we confirm the final cost before any work begins.</p></div>
+        </div>
+        <div class="why">
+          <span class="why-k">Custom</span>
+          <div><h3>Personalized alterations</h3><p>Every request is fitted to you. Choose how loose, how slim, how long. You stay in control of how your clothes look.</p></div>
+        </div>
+        <div class="why">
+          <span class="why-k">Accessible</span>
+          <div><h3>Convenient service</h3><p>Request an alteration from your phone in a couple of minutes. No appointments to chase and no confusing forms.</p></div>
+        </div>
+        <div class="why">
+          <span class="why-k">For you</span>
+          <div><h3>Built around high schoolers</h3><p>School clothes, formal wear, thrift finds, hand-me-downs. We know what students wear and what they can spend.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section alt" id="about">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">About us</span>
+        <p class="quote" style="margin-top: 22px">Clothes off the rack are made for an average body. <em>Nobody is average.</em></p>
+      </div>
+      <div class="about-body">
+        <p>Highlands Hem and Stitch started with a simple observation: plenty of students wear clothes that don&#39;t quite fit. Pants drag on the ground, shirts hang too loose, and a great thrift find is two inches too long.</p>
+        <p>Professional tailoring could fix that, but most students never consider it. It feels expensive, it feels like something for adults, and it&#39;s not obvious where to even start.</p>
+        <p><strong>We started this business to change that.</strong> Our goal is to make alterations affordable and easy to ask for, so every student can feel comfortable and confident in what they wear without spending too much.</p>
+        <div class="values">
+          <span class="chip">Affordability</span>
+          <span class="chip">Customization</span>
+          <span class="chip">Accessibility</span>
+          <span class="chip">Convenience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQUEST -->
+  <section class="section" id="request">
+    <div class="wrap req-grid">
+      <div>
+        <span class="eyebrow">Request an alteration</span>
+        <h2 style="font-size: clamp(40px, 5vw, 64px); margin-top: 16px">Tell us what needs fixing.</h2>
+        <p style="color: var(--muted); margin-top: 20px; max-width: 28em">Fill out the form and we&#39;ll reply with a price and next steps. Not sure which alteration you need? Just describe the problem.</p>
+        <div class="contact-list">
+          <div class="contact-item"><span class="contact-k">Email</span><span class="contact-v"><span class="ph">[your email address]</span></span></div>
+          <div class="contact-item"><span class="contact-k">Drop-off &amp; pickup</span><span class="contact-v"><span class="ph">[your location]</span></span></div>
+          <div class="contact-item"><span class="contact-k">Hours</span><span class="contact-v"><span class="ph">[your availability]</span></span></div>
+          <div class="contact-item"><span class="contact-k">Social</span><span class="contact-v"><span class="ph">[@yourhandle]</span></span></div>
+        </div>
+      </div>
+
+      <div class="form-card">
+                  <form class="form" id="request-form" aria-describedby="form-status" novalidate data-endpoint="" aria-label="Alteration request form">
+            <div class="field">
+              <label for="f-name">Name</label>
+              <input id="f-name" class="input" name="name" required type="text" autocomplete="name" placeholder="First and last name">
+              <span class="err" id="err-name" hidden>Please enter your name.</span>
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" class="input" name="email" required type="email" autocomplete="email" placeholder="you@example.com">
+              <span class="err" id="err-email" hidden>Please enter a valid email so we can reply.</span>
+            </div>
+            <div class="field">
+              <label for="f-item">Clothing item</label>
+              <select id="f-item" class="input" name="item" required>
+                <option value="">Choose an item</option>
+                <option value="Pants / jeans">Pants / jeans</option>
+                <option value="Shirt / top">Shirt / top</option>
+                <option value="Dress / skirt">Dress / skirt</option>
+                <option value="Shorts">Shorts</option>
+                <option value="Hoodie / sweater">Hoodie / sweater</option>
+                <option value="Jacket / blazer">Jacket / blazer</option>
+                <option value="Formal wear">Formal wear</option>
+                <option value="Something else">Something else</option>
+              </select>
+              <span class="err" id="err-item" hidden>Choose the item you want altered.</span>
+            </div>
+            <div class="field">
+              <label for="f-alt">Type of alteration</label>
+              <select id="f-alt" class="input" name="alteration" required>
+                <option value="">Choose an alteration</option>
+                <option value="Pants hemming">Pants hemming</option>
+                <option value="Waist adjustment">Waist adjustment</option>
+                <option value="Shirt alteration">Shirt alteration</option>
+                <option value="Sleeve adjustment">Sleeve adjustment</option>
+                <option value="General repair">General repair</option>
+                <option value="Custom fit">Custom fit</option>
+                <option value="Not sure yet">Not sure yet</option>
+              </select>
+              <span class="err" id="err-alteration" hidden>Choose an alteration, or pick &quot;Not sure yet&quot;.</span>
+            </div>
+            <div class="field full">
+              <span style="font-size: 13.5px; font-weight: 600">How do you want it to fit? <span style="color: var(--muted); font-weight: 500">(optional)</span></span>
+              <div class="chips-row" role="group" aria-label="Fit preferences">
+                <button type="button" class="pick" aria-pressed="false" data-fit="Slimmer">Slimmer</button>
+                <button type="button" class="pick" aria-pressed="false" data-fit="Looser">Looser</button>
+                <button type="button" class="pick" aria-pressed="false" data-fit="Shorter">Shorter</button>
+                <button type="button" class="pick" aria-pressed="false" data-fit="Cropped">Cropped</button>
+                <button type="button" class="pick" aria-pressed="false" data-fit="Tapered">Tapered</button>
+                <button type="button" class="pick" aria-pressed="false" data-fit="Cuffed">Cuffed</button>
+              </div>
+            </div>
+            <div class="field full">
+              <label for="f-notes">Additional customization requests <span>(optional)</span></label>
+              <textarea id="f-notes" class="input" placeholder="e.g. Hem to sit just above my sneakers, keep the original jeans hem." name="notes"></textarea>
+            </div>
+            <div class="form-foot">
+              <p id="form-status">We&#39;ll confirm the price with you before any work starts.</p>
+              <button class="btn btn-dark" type="submit">Send request <span class="arr" aria-hidden="true">→</span></button>
+            </div>
+          </form>
+
+        <div class="done" id="request-done" role="status" tabindex="-1" hidden>
+            <span class="eyebrow">Request ready</span>
+            <h3>Thanks, <span data-out="firstName"></span>.</h3>
+            <p style="color: var(--muted)">Here&#39;s a summary of your request. We&#39;ll reply at <span data-out="email"></span> with a price and next steps.</p>
+            <dl class="summary">
+              <dt>Item</dt><dd data-out="item"></dd>
+              <dt>Alteration</dt><dd data-out="alteration"></dd>
+              <dt>Fit</dt><dd data-out="fitSummary"></dd>
+              <dt>Notes</dt><dd data-out="notesSummary"></dd>
+            </dl>
+            <div><button class="btn btn-ghost" type="button" id="request-reset">Start another request</button></div>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="wrap">
+      <p class="foot-msg">Everyone deserves clothes that fit, <em>regardless of their budget.</em></p>
+      <div style="margin-top: 36px"><a class="btn" href="#request" style="background: var(--paper); color: var(--ink); border-color: var(--paper)">Request an Alteration <span class="arr" aria-hidden="true">→</span></a></div>
+      <div class="foot-row">
+        <span>© <span id="year">2026</span> Highlands Hem and Stitch</span>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="#services">Services</a>
+          <a href="#how">How it works</a>
+          <a href="#about">About</a>
+          <a href="#request">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>
+/* Highlands Hem and Stitch: site behavior.
+   To receive requests by email, paste a form endpoint (for example from
+   Formspree, https://formspree.io) into data-endpoint on #request-form in index.html. */
+(function () {
+  'use strict';
+
+  /* Mobile menu */
+  var menuBtn = document.getElementById('menu-btn');
+  var mobileNav = document.getElementById('mobile-nav');
+  function setMenu(open) {
+    mobileNav.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    menuBtn.querySelector('.i-open').toggleAttribute('hidden', open);
+    menuBtn.querySelector('.i-close').toggleAttribute('hidden', !open);
+  }
+  menuBtn.addEventListener('click', function () { setMenu(mobileNav.hidden); });
+  mobileNav.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !mobileNav.hidden) { setMenu(false); menuBtn.focus(); } });
+  window.matchMedia('(min-width: 1021px)').addEventListener('change', function (m) { if (m.matches) setMenu(false); });
+
+  /* Form */
+  var form = document.getElementById('request-form');
+  var done = document.getElementById('request-done');
+  var fields = ['name', 'email', 'item', 'alteration'];
+  var tried = false;
+
+  function el(name) { return form.querySelector('[name="' + name + '"]'); }
+  function invalid(name) {
+    var v = el(name).value.trim();
+    if (name === 'email') return !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    return !v;
+  }
+  function showErrors() {
+    var first = null;
+    fields.forEach(function (n) {
+      var bad = tried && invalid(n);
+      el(n).classList.toggle('bad', bad);
+      el(n).setAttribute('aria-invalid', String(bad));
+      el(n).setAttribute('aria-describedby', 'err-' + n);
+      document.getElementById('err-' + n).hidden = !bad;
+      if (bad && !first) first = el(n);
+    });
+    return first;
+  }
+  fields.forEach(function (n) {
+    el(n).addEventListener('input', function () { if (tried) showErrors(); });
+    el(n).addEventListener('change', function () { if (tried) showErrors(); });
+  });
+
+  /* "Request this" links prefill the form */
+  document.querySelectorAll('[data-alteration]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      showFormView();
+      el('alteration').value = a.dataset.alteration;
+      if (a.dataset.item && !el('item').value) el('item').value = a.dataset.item;
+      if (tried) showErrors();
+    });
+  });
+
+  /* Fit preference chips */
+  var fitButtons = form.querySelectorAll('[data-fit]');
+  fitButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var on = b.getAttribute('aria-pressed') !== 'true';
+      b.setAttribute('aria-pressed', String(on));
+      b.classList.toggle('on', on);
+    });
+  });
+  function selectedFits() {
+    return Array.prototype.filter.call(fitButtons, function (b) { return b.getAttribute('aria-pressed') === 'true'; })
+      .map(function (b) { return b.dataset.fit; });
+  }
+
+  function out(key, value) {
+    done.querySelectorAll('[data-out="' + key + '"]').forEach(function (n) { n.textContent = value; });
+  }
+  function showFormView() { done.hidden = true; form.hidden = false; }
+  function showDone(data) {
+    out('firstName', data.name.split(/\s+/)[0] || 'there');
+    out('email', data.email);
+    out('item', data.item);
+    out('alteration', data.alteration);
+    out('fitSummary', data.fit || 'No preference yet');
+    out('notesSummary', data.notes || 'None');
+    form.hidden = true;
+    done.hidden = false;
+    done.focus();
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    tried = true;
+    var first = showErrors();
+    if (first) { first.focus(); return; }
+
+    var data = {
+      name: el('name').value.trim(),
+      email: el('email').value.trim(),
+      item: el('item').value,
+      alteration: el('alteration').value,
+      fit: selectedFits().join(', '),
+      notes: el('notes').value.trim()
+    };
+    var endpoint = form.dataset.endpoint;
+    var status = document.getElementById('form-status');
+    var submitBtn = form.querySelector('[type="submit"]');
+
+    if (!endpoint) { showDone(data); return; }
+
+    submitBtn.disabled = true;
+    status.textContent = 'Sending your request…';
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    }).then(function (r) {
+      if (!r.ok) throw new Error('Request failed');
+      showDone(data);
+    }).catch(function () {
+      status.textContent = 'Something went wrong sending your request. Please try again, or email us directly.';
+    }).finally(function () {
+      submitBtn.disabled = false;
+    });
+  });
+
+  document.getElementById('request-reset').addEventListener('click', function () {
+    form.reset();
+    tried = false;
+    showErrors();
+    fitButtons.forEach(function (b) { b.setAttribute('aria-pressed', 'false'); b.classList.remove('on'); });
+    document.getElementById('form-status').textContent = 'We’ll confirm the price with you before any work starts.';
+    showFormView();
+    el('name').focus();
+  });
+
+  var year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
